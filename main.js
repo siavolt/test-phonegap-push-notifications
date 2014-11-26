@@ -63,20 +63,27 @@ $(document).ready(function() {
         }
     }
 
-    var pushNotification;
+    $('#button').on('click', function() {
+        window.pushNotification.register(successHandler, errorHandler, {
+            'senderID': '370001790729',
+            'ecb': 'onNotification'
+        });
+    });
+
+
     // Wait for device API libraries to load
     document.addEventListener('deviceready', function() {
         // push notification
-        pushNotification = window.plugins.pushNotification;
+        window.pushNotification = window.plugins.pushNotification;
         $('#app-status-ul').append('<li> device.platform ' + device.platform + '</li>');
 
         if (device.platform == 'android' || device.platform == 'Android' || device.platform == 'amazon-fireos') {
-            pushNotification.register(successHandler, errorHandler, {
+            window.pushNotification.register(successHandler, errorHandler, {
                 'senderID': '370001790729',
                 'ecb': 'onNotification'
             });
         } else if (device.platform == 'blackberry10') {
-            //     pushNotification.register(successHandler, errorHandler, {
+            //     window.pushNotification.register(successHandler, errorHandler, {
             //         invokeTargetId: 'replace_with_invoke_target_id',
             //         appId: 'replace_with_app_id',
             //         ppgUrl: 'replace_with_ppg_url', //remove for BES pushes
@@ -86,7 +93,7 @@ $(document).ready(function() {
             //         launchApplicationOnPush: true
             //     });
         } else {
-            pushNotification.register(tokenHandler, errorHandler, {
+            window.pushNotification.register(tokenHandler, errorHandler, {
                 'badge': 'true',
                 'sound': 'true',
                 'alert': 'true',
