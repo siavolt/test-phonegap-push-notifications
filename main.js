@@ -14,7 +14,7 @@ $(document).ready(function() {
     }
 
     // Android and Amazon Fire OS
-    function onNotification(e) {
+    window.onNotification = function (e) {
         $('#app-status-ul').append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 
         switch (e.event) {
