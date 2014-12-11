@@ -61,7 +61,7 @@ $(document).ready(function() {
                 break;
 
             default:
-                $('#app-status-ul').append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+                $('#app-status-ul').append('<li>EVENT -> Unknown ' + e + " </li>");
                 break;
         }
     }
