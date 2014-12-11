@@ -15,9 +15,10 @@ $(document).ready(function() {
 
     // Android and Amazon Fire OS
     window.onNotification = function (e) {
-        $('#app-status-ul').append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+        $('#app-status-ul').append('<li>EVENT -> RECEIVED:' + e + '</li>');
 
         switch (e.event) {
+
             case 'registered':
                 if (e.regid.length > 0) {
                     // Your GCM push server needs to know the regID before it can push to this device
@@ -61,7 +62,7 @@ $(document).ready(function() {
                 break;
 
             default:
-                $('#app-status-ul').append('<li>EVENT -> Unknown ' + e + " </li>");
+                //$('#app-status-ul').append('<li>EVENT -> Unknown ' + e + " </li>");
                 break;
         }
     }
