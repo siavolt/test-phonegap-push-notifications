@@ -18,6 +18,7 @@ $(document).ready(function() {
         $('#app-status-ul').append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 
         switch (e.event) {
+            $('#app-status-ul').append('<li>--MSG '+JSON.stringify(e) +'--</li>');
             case 'registered':
                 if (e.regid.length > 0) {
                     // Your GCM push server needs to know the regID before it can push to this device
@@ -57,11 +58,11 @@ $(document).ready(function() {
                 break;
 
             case 'error':
-                $('#app-status-ul').append('<li>ERROR -> MSG:' + e.msg + '</li>');
+                //$('#app-status-ul').append('<li>ERROR -> MSG:' + e.msg + '</li>');
                 break;
 
             default:
-                $('#app-status-ul').append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+                //$('#app-status-ul').append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
                 break;
         }
     }
