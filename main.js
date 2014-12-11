@@ -18,7 +18,7 @@ $(document).ready(function() {
         $('#app-status-ul').append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 
         switch (e.event) {
-            $('#app-status-ul').append('<li>--MSG '+JSON.stringify(e) +'--</li>');
+            $('#app-status-ul').append('<li>--MSG '+ e +'--</li>');
             case 'registered':
                 if (e.regid.length > 0) {
                     // Your GCM push server needs to know the regID before it can push to this device
