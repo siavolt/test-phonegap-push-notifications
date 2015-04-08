@@ -70,7 +70,7 @@ $(document).ready(function() {
 
     $('#button').on('click', function() {
         window.pushNotification.register(successHandler, errorHandler, {
-            'senderID': '370001790729',
+            'senderID': '120965791107',
             'ecb': 'onNotification'
         });
     });
@@ -84,7 +84,7 @@ $(document).ready(function() {
 
         if (device.platform == 'android' || device.platform == 'Android' || device.platform == 'amazon-fireos') {
             window.pushNotification.register(successHandler, errorHandler, {
-                'senderID': '370001790729',
+                'senderID': '120965791107',
                 'ecb': 'onNotification'
             });
         } else if (device.platform == 'blackberry10') {
